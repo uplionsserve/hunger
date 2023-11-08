@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::selection {
+	background-color: #f37728;
+	color: black;
+}
+
+a {
+	display: inline-block;
+	position: relative;
+
+	font-weight: 600;
+	color: hsl(0, 0%, 12%);
+	text-decoration: none;
+
+	&::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 20%;
+
+		position: absolute;
+		z-index: -1;
+		bottom: 18%;
+
+		background: #f37728;
+		filter: opacity(0.85);
+
+		transition: 0.1s;
+	}
+
+	&:hover::before {
+		height: 60%;
+		filter: opacity(0.55);
+	}
+}
+
+.underline {
+	background: linear-gradient(to top, #f37728 35%, transparent 35%);
+	text-decoration: none;
+}

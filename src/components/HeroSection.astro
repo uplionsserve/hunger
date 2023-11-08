@@ -1,101 +1,87 @@
 ---
-import { Image } from "astro:assets";
-import { showBuyAudiobookButton, showAmazonTag, book } from "../config.json";
+import { Image } from "astro:assets"
+import { showBuyAudiobookButton, showAmazonTag, book } from "../config.json"
 ---
 
 <main
-  class="mx-auto max-w-screen-xl px-4 mb-8 mt-12 sm:mt-12 sm:mb-12 sm:px-6 md:mt-32 md:mb-20 xl:mt-23 xl:mb-24"
+	class="xl:mt-23 mx-auto mb-8 mt-12 max-w-screen-xl px-4 sm:mb-12 sm:mt-12 sm:px-6 md:mb-20 md:mt-32 xl:mb-24"
 >
-  <div class="lg:grid lg:grid-cols-12 lg:gap-8">
-    <div class="mb-12 md:max-w-1xl md:mx-auto lg:col-span-8">
-      {
-        showAmazonTag && (
-          <div class="text-base uppercase tracking-wide mb-4">
-            <img
-              class="inline h-5 relative"
-              style="top:3px"
-              src="/amazon.svg"
-              alt="amazon.com"
-            />{" "}
-            best-seller
-          </div>
-        )
-      }
-
-      <h1
-        class="mt-1 text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:leading-none sm:text-6xl lg:text-5xl xl:text-6xl uppercase"
-      >
-        Chapada do<!-- -->&nbsp;<br class="hidden md:inline" /><span
-          class="underline">Corisco</span
-        >
-      </h1><p
-        class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl font-body"
-      >
-        O livro faz uma releitura das crenças que povoam o imaginário dos
-        ribeirinhos, moradores da Vila Velha do Poti. Local que pincela o
-        cenário de uma região esquecida durante muitos anos e abandonada por uma
-        elite política que adotou um projeto higienista causando a apartação de
-        classes sociais divergentes.
-      </p><p
-        class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl font-body"
-      >
-        O isolamento geográfico entre a Vila Velha e a Vila Nova é exposto nas
-        entrelinhas dos causos e lendas. Além disso, os mitos repassados de
-        forma oral entre os ribeirinhos são utilizados como mote para refletir
-        sobre a violência vivenciada pelos moradores.
-      </p>
-      <p
-        class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl font-body"
-      >
-        "Chapada do Corisco" é costura um romance proibido que surpreenderá o
-        leitor, a história retoma o problema da maldição que maculou uma Vila
-        tingindo as águas calmas do Poti com o sangue sagrado.
-      </p>
-      <div>
-        <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-          <div>
-            <a
-              href="https://www.arteimpressaeditora.com.br/product-page/chapada-do-corisco-alisson-carvalho"
-              target="_blank"
-              class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 rounded-md font-semibold text-black bg-book-theme hover:bg-yellow-200 focus:outline-none transition duration-300 ease-in-out md:py-4 md:text-lg md:px-10"
-              >Compre o Livro</a
-            >
-          </div>
-          {
-            showBuyAudiobookButton && (
-              <div class="mt-3 sm:mt-0 sm:ml-3">
-                <a
-                  href="#audiobook"
-                  class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 rounded-md font-semibold text-white bg-book-gray hover:bg-gray-800 focus:outline-none transition duration-300 ease-in-out md:py-4 md:text-lg md:px-10"
-                >
-                  Compre o Audiobook
-                </a>
-              </div>
-            )
-          }
-        </div><p class="mt-3 text-sm text-book-gray sm:mt-5 sm:text-base">
-          Ou <a
-            download=""
-            href="/static/(Sample)-14-Habits-of-Highly-Productive-Developers.pdf"
-            class="underline hover:bg-book-yellow transition ease-in-out duration-300"
-            >baixe o primeiro capítulo</a
-          > de graça.
-        </p>
-      </div>
-    </div><div
-      class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-4 lg:flex lg:items-center"
-    >
-      <a class="book-container" href="#ebook"
-        ><div class="book">
-          <Image
-            src={"/cover-2.jpeg"}
-            width={300}
-            height={600}
-            alt={book.title}
-            format={"avif"}
-          />
-        </div>
-      </a>
-    </div>
-  </div>
+	<div class="lg:grid lg:grid-cols-12 lg:gap-8">
+		<div class="md:max-w-1xl mb-12 md:mx-auto lg:col-span-8">
+			<h1
+				class="mb-12 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
+			>
+				Food For <span class="underline">All.</span>
+			</h1>
+			<h2 class="text-xl font-bold uppercase">Let's Seed U.P.</h2>
+			<p
+				class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
+			>
+				Let’s Seed U.P.! is a seed distribution/garden building and support
+				project funded through a grant provided by District 10.
+				<a href="/hunger/services#lets-seed-up">Click for REAL details!</a>
+			</p>
+			<h2 class="text-xl font-bold uppercase">Emergency Food Transportation</h2>
+			<p
+				class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
+			>
+				In an emergency situation, access to food resources is critical. The
+				ability to transport food from one location to individuals and families
+				in need in a community is our goal. <a
+					href="/hunger/services#emergency-food-transportation"
+					>Click for REAL details!</a
+				>
+			</p>
+			<h2 class="text-xl font-bold uppercase">Kids Backpack Program</h2>
+			<p
+				class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
+			>
+				D10 Hunger's mission is to fight against hunger by providing food &amp;
+				life-changing aid. We've realized that schools are the perfect target
+				for the Backpack program - they are the gathered location for children
+				in need. <a href="/hunger/services#kids-backpack-program"
+					>Click for REAL details!</a
+				>
+			</p>
+			<h2 class="text-xl font-bold uppercase">
+				UP Food As Medicine/UP Fresh Food Access Program
+			</h2>
+			<p
+				class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
+			>
+				...is a practice built on the knowledge that food and diet play
+				important roles in disease prevention and management by prioritizing
+				food and diet in an individual&#39;s health plan, with the goal of
+				overall health. <a href="/hunger/services#food-as-medicine"
+					>Click for REAL details!</a
+				>
+			</p>
+			<div>
+				<p class="mt-3 text-sm text-book-gray sm:mt-5 sm:text-base">
+					For any of the above, we gladly accept donations directly through this
+					site!
+					<a
+						href="/static/(Sample)-14-Habits-of-Highly-Productive-Developers.pdf"
+					>
+						Please consider helping us with financial support!</a
+					>
+				</p>
+			</div>
+		</div>
+		<div
+			id="hero-image"
+			class="relative mt-12 sm:mx-auto sm:max-w-lg lg:col-span-4 lg:mx-0 lg:mt-0 lg:flex lg:max-w-none lg:items-center"
+		>
+		</div>
+	</div>
 </main>
+
+<style>
+	#hero-image {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+		object-position: 250px;
+		background-image: url("/hunger/hero.jpg");
+	}
+</style>
