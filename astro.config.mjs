@@ -13,7 +13,6 @@ export default defineConfig({
 		}),
 		svelte(),
 		sitemap(),
-		partytown(),
 	],
 	base: "/hunger",
 	output: "server",
