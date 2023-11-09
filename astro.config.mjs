@@ -14,6 +14,7 @@ export default defineConfig({
 		svelte(),
 		sitemap(),
 	],
+	trailingSlash: "ignore",
 	base: "/hunger",
 	output: "server",
 	adapter: node({

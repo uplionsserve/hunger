@@ -2,15 +2,26 @@
 
 ---
 
-<header class="flex items-center px-8">
-	<a href="/" id="back-button"> </a>
+<header class="m-auto flex w-full max-w-7xl items-center gap-4">
+	<!-- <a href="/" id="back-button"> </a> -->
 	<div>
-		<img src="/hunger/logo.svg" alt="" class="w-32" />
+		<a
+			href="/"
+			class="bg-primary flex h-8 w-8 items-center justify-center rounded-full before:hidden"
+		>
+			<span class="block -translate-x-[1px] -rotate-90 text-white">&#9650;</span
+			>
+		</a>
+	</div>
+	<div>
+		<a href="/hunger" class="before:hidden"
+			><img src="/hunger/logo.svg" alt="" class="w-32" /></a
+		>
 	</div>
 	<menu class="flex gap-6">
 		<li><a href="/hunger">Home</a></li>
-		<li><a href="/hunger/services">About</a></li>
-		<li><a href="/hunger/about">Contact</a></li>
+		<li><a href="/hunger/programs">Programs</a></li>
+		<li><a href="/hunger/about">About</a></li>
 	</menu>
 </header>
 

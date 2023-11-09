@@ -3,11 +3,9 @@ import Layout from "../layouts/Layout.astro"
 ---
 
 <Layout title="Book Title">
-	<main
-		class="mx-auto mb-8 max-w-screen-xl grow px-4 sm:mb-12 sm:px-6 md:mb-20 xl:mb-24"
-	>
-		<div class="lg:grid lg:grid-cols-12 lg:gap-8">
-			<div class="md:max-w-1xl mb-12 md:mx-auto lg:col-span-8">
+	<main class="mx-auto mb-24 max-w-screen-xl grow px-4 sm:px-6">
+		<div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8">
+			<div class="md:max-w-1xl md:mx-auto lg:col-span-8">
 				<h1
 					class="mb-12 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
 				>
@@ -19,21 +17,9 @@ import Layout from "../layouts/Layout.astro"
 				>
 					Let’s Seed U.P.! is a seed distribution/garden building and support
 					project funded through a grant provided by District 10.
-					<a href="/hunger/services#lets-seed-up">Click for REAL details!</a>
+					<a href="/hunger/programs#lets-seed-up">Click for REAL details!</a>
 				</p>
-				<h2 class="text-xl font-bold uppercase">
-					Emergency Food Transportation
-				</h2>
-				<p
-					class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
-				>
-					In an emergency situation, access to food resources is critical. The
-					ability to transport food from one location to individuals and
-					families in need in a community is our goal. <a
-						href="/hunger/services#emergency-food-transportation"
-						>Click for REAL details!</a
-					>
-				</p>
+
 				<h2 class="text-xl font-bold uppercase">Kids Backpack Program</h2>
 				<p
 					class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
@@ -41,10 +27,11 @@ import Layout from "../layouts/Layout.astro"
 					D10 Hunger's mission is to fight against hunger by providing food
 					&amp; life-changing aid. We've realized that schools are the perfect
 					target for the Backpack program - they are the gathered location for
-					children in need. <a href="/hunger/services#kids-backpack-program"
+					children in need. <a href="/hunger/programs#kids-backpack-program"
 						>Click for REAL details!</a
 					>
 				</p>
+
 				<h2 class="text-xl font-bold uppercase">
 					UP Food As Medicine/UP Fresh Food Access Program
 				</h2>
@@ -54,17 +41,30 @@ import Layout from "../layouts/Layout.astro"
 					...is a practice built on the knowledge that food and diet play
 					important roles in disease prevention and management by prioritizing
 					food and diet in an individual&#39;s health plan, with the goal of
-					overall health. <a href="/hunger/services#food-as-medicine"
+					overall health. <a href="/hunger/programs#food-as-medicine"
 						>Click for REAL details!</a
 					>
 				</p>
-				<div>
+
+				<h2 class="text-xl font-bold uppercase">
+					Emergency Food Transportation
+				</h2>
+				<p
+					class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
+				>
+					In an emergency situation, access to food resources is critical. The
+					ability to transport food from one location to individuals and
+					families in need in a community is our goal. <a
+						href="/hunger/programs#emergency-food-transportation"
+						>Click for REAL details!</a
+					>
+				</p>
+
+				<div class="grow">
 					<p class="mt-3 text-sm text-book-gray sm:mt-5 sm:text-base">
 						For any of the above, we gladly accept donations directly through
 						this site!
-						<a
-							href="/static/(Sample)-14-Habits-of-Highly-Productive-Developers.pdf"
-						>
+						<a href="https://donorbox.org/lions-hunger" target="_blank">
 							Please consider helping us with financial support!</a
 						>
 					</p>
@@ -72,7 +72,7 @@ import Layout from "../layouts/Layout.astro"
 			</div>
 			<div
 				id="hero-image"
-				class="relative mt-12 sm:mx-auto sm:max-w-lg lg:col-span-4 lg:mx-0 lg:mt-0 lg:flex lg:max-w-none lg:items-center"
+				class="relative mt-12 h-60 w-full rounded-2xl bg-center object-contain sm:mx-auto lg:col-span-4 lg:mx-0 lg:mt-0 lg:h-full lg:max-w-none lg:items-center lg:rounded-tl-[200px]"
 			>
 			</div>
 		</div>
@@ -81,11 +81,27 @@ import Layout from "../layouts/Layout.astro"
 
 <style>
 	#hero-image {
+		background-image: url("/hunger/hero.jpg");
+	}
+
+	#hero-image::after {
+		content: "";
+		display: block;
 		width: 100%;
 		height: 100%;
-		object-fit: contain;
-		background-position: right;
-		background-image: url("/hunger/hero.jpg");
-		border-top-left-radius: 250px;
+		position: absolute;
+		z-index: -1;
+		background-color: #f37728;
+		border-radius: 15px;
+		transform: translateY(5%) scale(1.02);
+	}
+
+	@media (min-width: 1024px) {
+		#hero-image::after {
+			height: 90%;
+			bottom: 0;
+			border-top-left-radius: 200px;
+			transform: translate(-8%) scale(0.95);
+		}
 	}
 </style>

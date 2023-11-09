@@ -1,0 +1,151 @@
+{
+	"adapterName": "@astrojs/node",
+	"routes": [
+		{
+			"file": "",
+			"links": [],
+			"scripts": [],
+			"styles": [],
+			"routeData": {
+				"type": "endpoint",
+				"route": "/_image",
+				"pattern": "^\\/_image$",
+				"segments": [
+					[{ "content": "_image", "dynamic": false, "spread": false }]
+				],
+				"params": [],
+				"component": "node_modules/astro/dist/assets/endpoint/node.js",
+				"pathname": "/_image",
+				"prerender": false,
+				"_meta": { "trailingSlash": "ignore" }
+			}
+		},
+		{
+			"file": "",
+			"links": [],
+			"scripts": [],
+			"styles": [
+				{ "type": "external", "src": "/hunger/_astro/about.d55420cc.css" },
+				{
+					"type": "inline",
+					"content": "#hero-image[data-astro-cid-j7pv25f6]{width:100%;height:100%;-o-object-fit:contain;object-fit:contain;background-position:right;background-image:url(/hunger/hero.jpg);border-top-left-radius:250px}\n"
+				}
+			],
+			"routeData": {
+				"route": "/",
+				"type": "page",
+				"pattern": "^\\/$",
+				"segments": [],
+				"params": [],
+				"component": "src/pages/index.astro",
+				"pathname": "/",
+				"prerender": false,
+				"_meta": { "trailingSlash": "ignore" }
+			}
+		},
+		{
+			"file": "",
+			"links": [],
+			"scripts": [],
+			"styles": [
+				{ "type": "external", "src": "/hunger/_astro/about.d55420cc.css" }
+			],
+			"routeData": {
+				"route": "/buckets",
+				"type": "page",
+				"pattern": "^\\/buckets\\/?$",
+				"segments": [
+					[{ "content": "buckets", "dynamic": false, "spread": false }]
+				],
+				"params": [],
+				"component": "src/pages/buckets.astro",
+				"pathname": "/buckets",
+				"prerender": false,
+				"_meta": { "trailingSlash": "ignore" }
+			}
+		},
+		{
+			"file": "",
+			"links": [],
+			"scripts": [],
+			"styles": [
+				{ "type": "external", "src": "/hunger/_astro/about.d55420cc.css" }
+			],
+			"routeData": {
+				"route": "/about",
+				"type": "page",
+				"pattern": "^\\/about\\/?$",
+				"segments": [
+					[{ "content": "about", "dynamic": false, "spread": false }]
+				],
+				"params": [],
+				"component": "src/pages/about.astro",
+				"pathname": "/about",
+				"prerender": false,
+				"_meta": { "trailingSlash": "ignore" }
+			}
+		}
+	],
+	"base": "/hunger",
+	"compressHTML": true,
+	"componentMetadata": [
+		[
+			"/Users/harrisonbouche/Repositories/@uplionsserve/hunger/src/pages/about.astro",
+			{ "propagation": "none", "containsHead": true }
+		],
+		[
+			"/Users/harrisonbouche/Repositories/@uplionsserve/hunger/src/pages/buckets.astro",
+			{ "propagation": "none", "containsHead": true }
+		],
+		[
+			"/Users/harrisonbouche/Repositories/@uplionsserve/hunger/src/pages/index.astro",
+			{ "propagation": "none", "containsHead": true }
+		]
+	],
+	"renderers": [],
+	"clientDirectives": [
+		[
+			"idle",
+			"(()=>{var i=t=>{let e=async()=>{await(await t())()};\"requestIdleCallback\"in window?window.requestIdleCallback(e):setTimeout(e,200)};(self.Astro||(self.Astro={})).idle=i;window.dispatchEvent(new Event(\"astro:idle\"));})();"
+		],
+		[
+			"load",
+			"(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event(\"astro:load\"));})();"
+		],
+		[
+			"media",
+			"(()=>{var s=(i,t)=>{let a=async()=>{await(await i())()};if(t.value){let e=matchMedia(t.value);e.matches?a():e.addEventListener(\"change\",a,{once:!0})}};(self.Astro||(self.Astro={})).media=s;window.dispatchEvent(new Event(\"astro:media\"));})();"
+		],
+		[
+			"only",
+			"(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event(\"astro:only\"));})();"
+		],
+		[
+			"visible",
+			"(()=>{var r=(i,c,s)=>{let n=async()=>{await(await i())()},t=new IntersectionObserver(e=>{for(let o of e)if(o.isIntersecting){t.disconnect(),n();break}});for(let e of s.children)t.observe(e)};(self.Astro||(self.Astro={})).visible=r;window.dispatchEvent(new Event(\"astro:visible\"));})();"
+		]
+	],
+	"entryModules": {
+		"\u0000@astrojs-ssr-virtual-entry": "entry.mjs",
+		"\u0000@astro-renderers": "renderers.mjs",
+		"\u0000empty-middleware": "_empty-middleware.mjs",
+		"/src/pages/buckets.astro": "chunks/pages/buckets_96b16711.mjs",
+		"/src/pages/index.astro": "chunks/pages/index_360a5494.mjs",
+		"/node_modules/astro/dist/assets/endpoint/node.js": "chunks/pages/node_71c1a14c.mjs",
+		"\u0000@astrojs-manifest": "manifest_7e94290f.mjs",
+		"\u0000@astro-page:node_modules/astro/dist/assets/endpoint/node@_@js": "chunks/node_5b26dd59.mjs",
+		"\u0000@astro-page:src/pages/index@_@astro": "chunks/index_5f92a512.mjs",
+		"\u0000@astro-page:src/pages/buckets@_@astro": "chunks/buckets_a49744e4.mjs",
+		"\u0000@astro-page:src/pages/about@_@astro": "chunks/about_1af7cd0d.mjs",
+		"@astrojs/svelte/client.js": "_astro/client.ef651e53.js",
+		"astro:scripts/before-hydration.js": ""
+	},
+	"assets": [
+		"/hunger/_astro/about.d55420cc.css",
+		"/hunger/hero.jpg",
+		"/hunger/logo.svg",
+		"/hunger/_astro/client.ef651e53.js",
+		"/hunger/icons8-medium-ios-16-filled/icons8-medium-50.svg",
+		"/hunger/icons8-medium-ios-16-filled/icons8-medium-512.svg"
+	]
+}
