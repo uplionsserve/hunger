@@ -15,5 +15,5 @@ export default defineConfig({
 	trailingSlash: "ignore",
 	base: "/hunger",
 	output: "static",
-	outDir: "../../.vercel/output/static/hunger",
+	outDir: "dist/hunger",
 })
