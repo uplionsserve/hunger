@@ -6,7 +6,6 @@
 			"@components/*": ["./src/components/*"],
 			"@layouts/*": ["./src/layouts/*"],
 			"@styles/*": ["./src/styles/*"]
-		},
-		"types": ["bun-types"]
+		}
 	}
 }
