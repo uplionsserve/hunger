@@ -1,6 +1,6 @@
 export async function getCMSData(dataType: string) {
 	try {
-		const dataRes = await fetch(`${import.meta.env.CMS_URL}-data-${dataType}`)
+		const dataRes = await fetch(`${import.meta.env.CMS_URI_DATA}-${dataType}`)
 		if (dataRes.ok) {
 			return await dataRes.json()
 		} else {
@@ -13,7 +13,7 @@ export async function getCMSData(dataType: string) {
 
 export async function getCMSPage(pageType: string) {
 	try {
-		const pageRes = await fetch(`${import.meta.env.CMS_URL_PAGES}-${pageType}`)
+		const pageRes = await fetch(`${import.meta.env.CMS_URI_PAGES}-${pageType}`)
 		if (pageRes.ok) {
 			return await pageRes.json()
 		} else {

@@ -16,7 +16,7 @@ a {
 	text-decoration: none;
 }
 
-a::before {
+a:not(.no-underline)::before {
 	content: "";
 	display: block;
 	width: 100%;

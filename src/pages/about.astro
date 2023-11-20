@@ -1,14 +1,13 @@
 ---
-import { getCMSPage } from "src/helpers"
+import { getCMSData, getCMSPage } from "src/helpers"
 import Layout from "../layouts/Layout.astro"
+import Partner from "@components/Partner.svelte"
 
 const aboutData = await getCMSPage("about")
-console.log(aboutData)
+const { docs: partners } = await getCMSData("partners")
 ---
 
 <Layout title="About | Hunger">
-	<!-- About -->
-	<!-- Mission statement and goals -->
 	<main class="mx-auto mb-24 max-w-screen-xl grow px-4 sm:px-6">
 		<div class="flex flex-col gap-12">
 			<div class="grid lg:grid-cols-3">
@@ -45,6 +44,14 @@ console.log(aboutData)
 					>
 						Our <span class="underline">Partners.</span>
 					</h2>
+                    <ul class="flex gap-4">
+                        {
+                            partners.map((partner) => (
+                                <Partner partner={partner} />
+                            ))
+                        }
+                        
+                    </ul>
 				</div>
 			</div>
 		</div>
