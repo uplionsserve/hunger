@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro"
+import { getCMSPage, getCMSData } from "../helpers"
 
-let homeRes = await fetch(`${import.meta.env.CMS_URL}/api/globals/hunger_home`)
-const homeData = await homeRes.json()
+const homeData = await getCMSPage("home")
 
 const titleRegex = homeData.title.match(/_(.*)_/)
 let title = homeData.title.replace(
@@ -10,8 +10,7 @@ let title = homeData.title.replace(
 	`<span class="underline">${titleRegex[1]}</span>`,
 )
 
-let programsRes = await fetch(`${import.meta.env.CMS_URL}/api/programs`)
-const { docs: programs } = await programsRes.json()
+const { docs: programs } = await getCMSData("programs")
 ---
 
 <Layout title="Hunger | U.P. Lions Serve">
@@ -39,10 +38,9 @@ const { docs: programs } = await programsRes.json()
 
 				<div class="grow">
 					<p class="text-book-gray mt-3 text-sm sm:mt-5 sm:text-base">
-						For any of the above, we gladly accept donations directly through
-						this site!
+						Please consider a donation to any of the programs above.
 						<a href="https://donorbox.org/lions-hunger" target="_blank">
-							Please consider helping us with financial support!</a
+							Let's grow together!</a
 						>
 					</p>
 				</div>
