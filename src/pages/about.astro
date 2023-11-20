@@ -1,5 +1,9 @@
 ---
+import { getCMSPage } from "src/helpers"
 import Layout from "../layouts/Layout.astro"
+
+const aboutData = await getCMSPage("about")
+console.log(aboutData)
 ---
 
 <Layout title="About | Hunger">
@@ -9,62 +13,18 @@ import Layout from "../layouts/Layout.astro"
 		<div class="flex flex-col gap-12">
 			<div class="grid lg:grid-cols-3">
 				<div class="flex flex-col gap-4 lg:col-span-2">
-					<div class="md:max-w-1xl md:mx-auto lg:col-span-8">
+					<div
+						class="md:max-w-1xl flex flex-col gap-4 md:mx-auto lg:col-span-8"
+					>
 						<h2
 							class="mb-12 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
 						>
 							Our <span class="underline">Mission.</span>
 						</h2>
-						<p
-							class="text-gray-bold mb-6 mt-3 font-body text-base font-bold tracking-[0.015rem] sm:mt-2 sm:text-xl lg:text-xl"
-						>
-							To alleviate Food Insecurity and Hunger in the Upper Peninsula by
-							partnering across communities to obtain and provide affordable and
-							nutritious food and education.
-						</p>
-						<h3 class="mb-4 text-2xl font-bold uppercase">
-							About U.P. Lions Serve Foundation
-						</h3>
-						<p
-							class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
-						>
-							U.P. LIONS SERVE is a 501c3 foundation that provides financial
-							support for many projects and programs through District 10 Lions
-							Clubs. UP Lions Serve focuses support in the areas of eliminating
-							food insecurity and hunger and improving the health and well-
-							being of communities through access to healthy and nutritious
-							foods, community education and advocacy.
-						</p>
-						<p
-							class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
-						>
-							We see how the hunger and nutrition crisis affects local
-							communities and believe true community improvement depends on the
-							thriving of its members through access to nutritious, healthy,
-							fresh foods.
-						</p>
-						<p
-							class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
-						>
-							We support hands-on, classroom and online education that teaches
-							people of all ages how to grow, utilize and preserve their own
-							grown food.
-						</p>
-						<p
-							class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
-						>
-							We serve to improve human flourishing!
-						</p>
-						<a
-							href="https://donorbox.org/lions-hunger"
-							target="_blank"
-							class="bg-primary inline-flex items-center justify-center rounded-md border border-transparent px-5 py-3 text-base font-bold uppercase text-white transition-all hover:brightness-90"
-							tabindex="0"
-						>
-							Donate today
-						</a>
+
+						<Fragment set:html={aboutData.mission_statement_html} />
 					</div>
-					<div class="w-full"></div>
+					<br class="block w-full" />
 				</div>
 			</div>
 			<div class="grid w-full md:mx-auto lg:grid-cols-3">
@@ -74,66 +34,53 @@ import Layout from "../layouts/Layout.astro"
 					>
 						Our <span class="underline">Goals.</span>
 					</h2>
-					<ol
-						class="ml-12 list-decimal font-body text-base text-gray-700 sm:mt-2 sm:text-xl lg:text-lg"
+
+					<Fragment set:html={aboutData.vision_statement_html} />
+				</div>
+			</div>
+			<div class="grid w-full md:mx-auto lg:grid-cols-3">
+				<div class="col-span-2 flex flex-col gap-4">
+					<h2
+						class="mb-6 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
 					>
-						<li>Identify and address food scarcity</li>
-						<li>Improve Health Outcomes</li>
-						<li>
-							Provide resources to Lions in D10 to empower clubs and communities
-						</li>
-						<li>
-							Collaborate with other Lions Districts to build stronger programs
-						</li>
-						<li>Focus energies and resources on our 4 buckets/Initiatives</li>
-						<li>Build greater awareness of the UPLionsServe Foundation</li>
-						<li>
-							Provide micro-grant access for D10 Lions Clubs that align with our
-							mission
-						</li>
-						<li>Meet Food needs on an emergency basis</li>
-						<li>
-							Partner with agencies in the Upper Peninsula that align with our
-							mission
-						</li>
-						<li>
-							Strengthen local food system through long term infrastructure and
-							sustainability
-						</li>
-						<li>Increase access to nutrition education and training</li>
-					</ol>
-					<p
-						class="font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
-					>
-						To achieve our mission of making nutritious food accessible to every
-						community in the Upper Peninsula HUNGER collaborates with community
-						partners and agencies to create programs that aim to empower
-						individuals to act on their own behalf. Hunger is an everyday
-						presence for some, stressful both physically and mentally. We are on
-						a Mission To Serve! Lions serve it's that simple, and it has been
-						since we first began in 1917.
-					</p>
-					<p
-						class="font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg"
-					>
-						We can provide the seed, the soil, the compost, the education and
-						the manpower to strengthen our local food system.
-					</p>
-					<p
-						class="font-body text-base font-bold text-gray-700 sm:mt-2 sm:text-xl lg:text-lg"
-					>
-						PLEASE HELP US GROW BY DONATING TO LIONS HUNGER:
-					</p>
-					<a
-						href="https://donorbox.org/lions-hunger"
-						target="_blank"
-						class="bg-primary inline-flex w-fit items-center justify-center rounded-md border border-transparent px-5 py-3 text-base font-bold uppercase text-white transition-all hover:brightness-90"
-						tabindex="0"
-					>
-						Donate today
-					</a>
+						Our <span class="underline">Partners.</span>
+					</h2>
 				</div>
 			</div>
 		</div>
 	</main>
 </Layout>
+
+<style>
+	:global(p) {
+		@apply font-body text-base text-gray-600;
+
+		@media (min-width: 640px) {
+			font-size: 1.25rem /* 20px */;
+			line-height: 1.75rem /* 28px */;
+		}
+
+		@media (min-width: 1024px) {
+			font-size: 1.125rem /* 18px */;
+			line-height: 1.75rem /* 28px */;
+		}
+	}
+
+	:global(h3) {
+		@apply mt-2 text-2xl font-bold uppercase text-gray-700;
+	}
+
+	:global(ul) {
+		@apply ml-12 list-disc font-body text-base text-gray-700;
+
+		@media (min-width: 640px) {
+			font-size: 1.25rem /* 20px */;
+			line-height: 1.75rem /* 28px */;
+		}
+
+		@media (min-width: 1024px) {
+			font-size: 1.125rem /* 18px */;
+			line-height: 1.75rem /* 28px */;
+		}
+	}
+</style>
