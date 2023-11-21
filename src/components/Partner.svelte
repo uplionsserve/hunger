@@ -18,7 +18,9 @@
 		<div class="bg-primary absolute h-[4.5rem] w-[4.5rem] -translate-x-2"></div>
 		<div class="absolute h-[4.5rem] w-[4.5rem] -translate-y-2 bg-black"></div>
 		<img
-			src={`${import.meta.env.CMS_URL}${partner.logo_image.sizes.logo.url}`}
+			src={`${import.meta.env.CMS_URL}${
+				partner.logo_image.sizes?.logo.url ?? ""
+			}`}
 			alt=""
 			class="relative block h-16 w-16 shrink-0 list-none bg-white p-2"
 		/>
