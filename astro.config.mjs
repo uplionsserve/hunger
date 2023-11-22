@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config"
 import tailwind from "@astrojs/tailwind"
 import svelte from "@astrojs/svelte"
-import vercel from "@astrojs/vercel/serverless"
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,6 +12,6 @@ export default defineConfig({
 	],
 	site: "https://uplionsserve.org",
 	base: "/hunger",
-	output: "server",
-	adapter: vercel(),
+	output: "static",
+	outDir: "dist/hunger",
 })
