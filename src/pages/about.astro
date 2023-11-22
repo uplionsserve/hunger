@@ -1,10 +1,10 @@
 ---
 import { getCMSData, getCMSPage } from "src/helpers"
-import Layout from "../layouts/Layout.astro"
+import Layout from "@layouts/Layout.astro"
 import Partner from "@components/Partner.svelte"
 
 const aboutData = await getCMSPage("about")
-const { docs: partners } = await getCMSData("partners")
+const { docs: partners } = await getCMSData("partners?sort=id")
 ---
 
 <Layout title="About | Hunger">
@@ -22,6 +22,17 @@ const { docs: partners } = await getCMSData("partners")
 						</h2>
 
 						<Fragment set:html={aboutData.mission_statement_html} />
+						{
+							aboutData.mission_cta_button.url && (
+								<a
+									href={aboutData.mission_cta_button.url}
+									target="_blank"
+									class="w-fit bg-primary px-5 py-3 font-bold uppercase text-white no-underline hover:brightness-90"
+								>
+									{aboutData.mission_cta_button.text}
+								</a>
+							)
+						}
 					</div>
 					<br class="block w-full" />
 				</div>
@@ -38,20 +49,15 @@ const { docs: partners } = await getCMSData("partners")
 				</div>
 			</div>
 			<div class="grid w-full md:mx-auto lg:grid-cols-3">
-				<div class="col-span-2 flex flex-col gap-4">
+				<div class="col-span-2 flex flex-col gap-6">
 					<h2
 						class="mb-6 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
 					>
 						Our <span class="underline">Partners.</span>
 					</h2>
-                    <ul class="flex gap-4">
-                        {
-                            partners.map((partner) => (
-                                <Partner partner={partner} />
-                            ))
-                        }
-                        
-                    </ul>
+					<ul class="ml-0 grid w-full gap-8 lg:grid-cols-2">
+						{partners.map((partner) => <Partner partner={partner} />)}
+					</ul>
 				</div>
 			</div>
 		</div>
