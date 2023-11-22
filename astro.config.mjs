@@ -11,7 +11,8 @@ export default defineConfig({
 			applyBaseStyles: false,
 		}),
 	],
-	trailingSlash: "ignore",
+	site: "https://uplionsserve.org",
+	base: "/hunger",
 	output: "server",
 	adapter: vercel(),
 })
