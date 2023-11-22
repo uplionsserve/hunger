@@ -28,7 +28,7 @@ const { docs: programs } = await getCMSData("programs")
 							<h2 class="text-xl font-bold uppercase">{program.title}</h2>
 							<p class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg">
 								{program.home_page_description}{" "}
-								<a href={`/hunger/programs#${program.title_id}`}>
+								<a href={`/programs#${program.title_id}`}>
 									Click for REAL details!
 								</a>
 							</p>
@@ -56,7 +56,7 @@ const { docs: programs } = await getCMSData("programs")
 
 <style>
 	#hero-image {
-		background-image: url("/hunger/hero.jpg");
+		background-image: url("/hero.jpg");
 	}
 
 	#hero-image::after {
