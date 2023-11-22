@@ -1,19 +1,17 @@
 import { defineConfig } from "astro/config"
 import tailwind from "@astrojs/tailwind"
 import svelte from "@astrojs/svelte"
-import sitemap from "@astrojs/sitemap"
+import vercel from "@astrojs/vercel/serverless"
 
 // https://astro.build/config
 export default defineConfig({
 	integrations: [
+		svelte(),
 		tailwind({
 			applyBaseStyles: false,
 		}),
-		svelte(),
-		sitemap(),
 	],
 	trailingSlash: "ignore",
-	base: "/hunger",
-	output: "static",
-	outDir: "dist/hunger",
+	output: "server",
+	adapter: vercel(),
 })
