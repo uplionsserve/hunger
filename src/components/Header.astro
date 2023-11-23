@@ -1,8 +1,8 @@
 ---
-
+import LinkButton from "./LinkButton.svelte"
 ---
 
-<header class="m-auto flex w-full max-w-7xl items-center gap-4">
+<header class="m-auto flex w-full max-w-7xl items-center gap-4 md:ml-10">
 	<div>
 		<a
 			href="/"
@@ -17,12 +17,17 @@
 			<img src="/hunger/logo.svg" alt="" class="w-32" />
 		</a>
 	</div>
-	<menu class="flex gap-6">
-		<li><a href="/hunger">Home</a></li>
-		<li><a href="/hunger/programs">Programs</a></li>
-		<li><a href="/hunger/about">About</a></li>
+	<menu class="flex w-full items-center gap-6 text-2xl">
+		<li><a href="/hunger" class="">Home</a></li>
+		<li><a href="/hunger/programs" class="">Programs</a></li>
+		<li><a href="/hunger/about" class="">About</a></li>
 	</menu>
 </header>
+<menu class="fixed right-20 top-10 xl:right-10">
+	<li>
+		<LinkButton href="/hunger/donate">Donate</LinkButton>
+	</li>
+</menu>
 
 <style>
 	#back-button {
@@ -41,9 +46,5 @@
 
 	#back-button::before {
 		display: none;
-	}
-
-	menu a {
-		font-size: 1.5rem;
 	}
 </style>
