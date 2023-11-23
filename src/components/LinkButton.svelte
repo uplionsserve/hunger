@@ -3,7 +3,7 @@
 	export let classes: string = ""
 </script>
 
-<a {href} class="shadow-before relative h-fit w-fit {classes}">
+<a {href} class="shadow-before relative h-fit w-fit no-underline {classes}">
 	<span
 		class="bg-primary block w-fit px-5 py-3 text-lg font-bold uppercase text-white no-underline hover:brightness-90"
 	>
