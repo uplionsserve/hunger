@@ -1,8 +1,24 @@
 ---
 import Layout from "@layouts/Layout.astro"
+import LinkButton from "@components/LinkButton.svelte"
+import { getCMSPage } from "src/helpers"
+
+const donateData = await getCMSPage("donate")
+console.log(donateData)
 ---
 
 <Layout title="Donate">
-	<h1>Donate</h1>
-	<p>Donate to the project.</p>
+	<div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8">
+		<div class="md:max-w-1xl flex flex-col gap-4 md:mx-auto lg:col-span-8">
+			<h1
+				class="mb-12 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
+			>
+				Let's grow <span class="underline">together!</span>
+			</h1>
+			<Fragment set:html={donateData.donate_statement_html} />
+			<LinkButton href={donateData.donate_cta_button.url} classes="mt-4">
+				{donateData.donate_cta_button.text}
+			</LinkButton>
+		</div>
+	</div>
 </Layout>
