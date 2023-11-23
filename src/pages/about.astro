@@ -8,60 +8,56 @@ const { docs: partners } = await getCMSData("partners?sort=id")
 ---
 
 <Layout title="About | Hunger">
-	<main class="mx-auto mb-24 max-w-screen-xl grow px-4 sm:px-6">
-		<div class="flex flex-col gap-12">
-			<div class="grid lg:grid-cols-3">
-				<div class="flex flex-col gap-4 lg:col-span-2">
-					<div
-						class="md:max-w-1xl flex flex-col gap-4 md:mx-auto lg:col-span-8"
-					>
-						<h2
-							class="mb-12 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
-						>
-							Our <span class="underline">Mission.</span>
-						</h2>
-
-						<Fragment set:html={aboutData.mission_statement_html} />
-						{
-							aboutData.mission_cta_button.url && (
-								<a
-									href={aboutData.mission_cta_button.url}
-									target="_blank"
-									class="w-fit bg-primary px-5 py-3 font-bold uppercase text-white no-underline hover:brightness-90"
-								>
-									{aboutData.mission_cta_button.text}
-								</a>
-							)
-						}
-					</div>
-					<br class="block w-full" />
-				</div>
-			</div>
-			<div class="grid w-full md:mx-auto lg:grid-cols-3">
-				<div class="col-span-2 flex flex-col gap-4">
+	<div class="flex flex-col gap-12">
+		<div class="grid lg:grid-cols-3">
+			<div class="flex flex-col gap-4 lg:col-span-2">
+				<div class="md:max-w-1xl flex flex-col gap-4 md:mx-auto lg:col-span-8">
 					<h2
-						class="mb-6 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
+						class="mb-12 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
 					>
-						Our <span class="underline">Goals.</span>
+						Our <span class="underline">Mission.</span>
 					</h2>
 
-					<Fragment set:html={aboutData.vision_statement_html} />
+					<Fragment set:html={aboutData.mission_statement_html} />
+					{
+						aboutData.mission_cta_button.url && (
+							<a
+								href={aboutData.mission_cta_button.url}
+								target="_blank"
+								class="w-fit bg-primary px-5 py-3 font-bold uppercase text-white no-underline hover:brightness-90"
+							>
+								{aboutData.mission_cta_button.text}
+							</a>
+						)
+					}
 				</div>
-			</div>
-			<div class="grid w-full md:mx-auto lg:grid-cols-3">
-				<div class="col-span-2 flex flex-col gap-6">
-					<h2
-						class="mb-6 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
-					>
-						Our <span class="underline">Partners.</span>
-					</h2>
-					<ul class="ml-0 grid w-full gap-8 lg:grid-cols-2">
-						{partners.map((partner) => <Partner partner={partner} />)}
-					</ul>
-				</div>
+				<br class="block w-full" />
 			</div>
 		</div>
-	</main>
+		<div class="grid w-full md:mx-auto lg:grid-cols-3">
+			<div class="col-span-2 flex flex-col gap-4">
+				<h2
+					class="mb-6 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
+				>
+					Our <span class="underline">Goals.</span>
+				</h2>
+
+				<Fragment set:html={aboutData.vision_statement_html} />
+			</div>
+		</div>
+		<div class="grid w-full md:mx-auto lg:grid-cols-3">
+			<div class="col-span-2 flex flex-col gap-6">
+				<h2
+					class="mb-6 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
+				>
+					Our <span class="underline">Partners.</span>
+				</h2>
+				<ul class="ml-0 grid w-full gap-8 lg:grid-cols-2">
+					{partners.map((partner) => <Partner partner={partner} />)}
+				</ul>
+			</div>
+		</div>
+	</div>
 </Layout>
 
 <style>

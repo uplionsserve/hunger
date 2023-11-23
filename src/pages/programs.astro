@@ -14,11 +14,9 @@ const { docs: programs } = (await getCMSData("programs")) as { docs: Program[] }
 ---
 
 <Layout title="Programs | Hunger">
-	<main class="mx-auto mb-24 max-w-screen-xl grow px-4 sm:px-6">
-		<div class="grid lg:grid-cols-3">
-			<article class="flex flex-col gap-20 lg:col-span-2">
-				{programs.map((program) => <ProgramListing program={program} />)}
-			</article>
-		</div>
-	</main>
+	<div class="grid lg:grid-cols-3">
+		<article class="flex flex-col gap-20 lg:col-span-2">
+			{programs.map((program) => <ProgramListing program={program} />)}
+		</article>
+	</div>
 </Layout>
