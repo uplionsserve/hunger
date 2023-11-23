@@ -29,11 +29,11 @@
 			<img
 				src={`${program.logo_image.sizes?.logo.url ?? ""}`}
 				alt=""
-				class="h-20 w-20"
+				class="absolute h-24 w-24 opacity-20 lg:static lg:h-20 lg:w-20 lg:opacity-100"
 			/>
 		{/if}
 		<h2
-			class="text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
+			class="relative mt-8 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:mt-0 lg:text-5xl xl:text-6xl"
 		>
 			{program.title}
 		</h2>
