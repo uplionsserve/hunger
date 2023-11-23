@@ -2,7 +2,9 @@
 import LinkButton from "./LinkButton.svelte"
 ---
 
-<header class="m-auto flex w-full max-w-7xl items-center gap-4 md:ml-10">
+<header
+	class="m-auto flex hidden hidden w-full max-w-7xl items-center gap-4 md:ml-10"
+>
 	<div>
 		<a
 			href="/"
@@ -23,7 +25,7 @@ import LinkButton from "./LinkButton.svelte"
 		<li><a href="/hunger/about" class="">About</a></li>
 	</menu>
 </header>
-<menu class="fixed right-20 top-10 xl:right-10">
+<menu class="fixed right-20 top-10 z-50 hidden xl:right-10">
 	<li>
 		<LinkButton href="/hunger/donate">Donate</LinkButton>
 	</li>
