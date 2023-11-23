@@ -2,6 +2,7 @@
 import { getCMSData, getCMSPage } from "src/helpers"
 import Layout from "@layouts/Layout.astro"
 import Partner from "@components/Partner.svelte"
+import LinkButton from "@components/LinkButton.svelte"
 
 const aboutData = await getCMSPage("about")
 const { docs: partners } = await getCMSData("partners?sort=id")
@@ -21,13 +22,9 @@ const { docs: partners } = await getCMSData("partners?sort=id")
 					<Fragment set:html={aboutData.mission_statement_html} />
 					{
 						aboutData.mission_cta_button.url && (
-							<a
-								href={aboutData.mission_cta_button.url}
-								target="_blank"
-								class="w-fit bg-primary px-5 py-3 font-bold uppercase text-white no-underline hover:brightness-90"
-							>
+							<LinkButton href={aboutData.mission_cta_button.url}>
 								{aboutData.mission_cta_button.text}
-							</a>
+							</LinkButton>
 						)
 					}
 				</div>
