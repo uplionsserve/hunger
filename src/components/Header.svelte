@@ -28,7 +28,7 @@
 	</div>
 	<menu
 		class:mobile-menu-opened={menuIsOpen}
-		class="pointer-events-none fixed left-0 top-0 z-40 flex h-screen w-screen translate-y-[5%] flex-col items-center justify-center gap-6 bg-white text-4xl opacity-0 transition-all lg:static lg:h-auto lg:w-full lg:flex-row lg:justify-start lg:text-2xl lg:opacity-100"
+		class="pointer-events-none fixed left-0 top-0 z-40 flex h-screen w-screen translate-y-[5%] flex-col items-center justify-center gap-6 bg-white text-4xl opacity-0 transition-all lg:pointer-events-auto lg:static lg:h-auto lg:w-full lg:flex-row lg:justify-start lg:text-2xl lg:opacity-100"
 	>
 		<li class="lg:hidden"><a href="/">Back to UPLS</a></li>
 		<li><a href="/hunger">Home</a></li>
@@ -37,7 +37,7 @@
 		<li class="lg:hidden"><a href="/hunger/donate">Donate</a></li>
 	</menu>
 </header>
-<menu class="right-20 top-10 z-50 hidden lg:fixed xl:right-10">
+<menu class="fixed right-20 top-10 z-50 hidden lg:block xl:right-10">
 	<li>
 		<LinkButton href="/hunger/donate">Donate</LinkButton>
 	</li>
