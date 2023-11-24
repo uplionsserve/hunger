@@ -14,16 +14,16 @@ const { docs: programs } = await getCMSData("programs")
 ---
 
 <Layout title="Hunger | U.P. Lions Serve">
-	<div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8">
-		<div class="md:max-w-1xl md:mx-auto lg:col-span-8">
+	<div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-12">
+		<div class="md:max-w-1xl flex flex-col gap-4 md:mx-auto lg:col-span-8">
 			<h1
-				class="mb-12 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:text-6xl sm:leading-none lg:text-5xl xl:text-6xl"
+				class="mb-2 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:leading-none lg:mb-6 lg:text-6xl"
 				set:html={title}
 			/>
 
 			{
 				programs.map((program) => (
-					<>
+					<div>
 						<h2 class="text-xl font-bold uppercase">{program.title}</h2>
 						<p class="mb-6 mt-3 font-body text-base text-gray-500 sm:mt-2 sm:text-xl lg:text-lg">
 							{program.home_page_description}{" "}
@@ -31,7 +31,7 @@ const { docs: programs } = await getCMSData("programs")
 								Click for REAL details!
 							</a>
 						</p>
-					</>
+					</div>
 				))
 			}
 
@@ -46,7 +46,7 @@ const { docs: programs } = await getCMSData("programs")
 		</div>
 		<div
 			id="hero-image"
-			class="relative mt-12 h-60 w-full rounded-2xl bg-center object-contain sm:mx-auto lg:col-span-4 lg:mx-0 lg:mt-0 lg:h-full lg:max-w-none lg:items-center lg:rounded-tl-[200px]"
+			class="relative mt-12 h-60 w-full bg-cover bg-center object-contain sm:mx-auto lg:col-span-4 lg:mx-0 lg:mt-0 lg:h-full lg:max-w-none lg:items-center"
 		>
 		</div>
 	</div>
@@ -57,7 +57,7 @@ const { docs: programs } = await getCMSData("programs")
 		background-image: url("/hunger/hero.jpg");
 	}
 
-	#hero-image::after {
+	#hero-image::before {
 		content: "";
 		display: block;
 		width: 100%;
@@ -65,16 +65,13 @@ const { docs: programs } = await getCMSData("programs")
 		position: absolute;
 		z-index: -1;
 		background-color: #f37728;
-		border-radius: 15px;
-		transform: translateY(5%) scale(1.02);
+		transform: translate(-1%, 4%);
 	}
 
 	@media (min-width: 1024px) {
-		#hero-image::after {
-			height: 90%;
+		#hero-image::before {
 			bottom: 0;
-			border-top-left-radius: 200px;
-			transform: translate(-8%) scale(0.95);
+			transform: translate(-4%, 2%);
 		}
 	}
 </style>
