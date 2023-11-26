@@ -3,6 +3,7 @@
 
 	export let href: string | undefined = undefined
 	export let classes: string = ""
+	export let disabled: boolean | undefined = undefined
 
 	const dispatch = createEventDispatcher()
 	function click() {
@@ -16,15 +17,20 @@
 	class="shadow-before relative h-fit w-fit no-underline {classes}"
 	on:click={click}
 	role={href ? undefined : "button"}
+	{disabled}
 >
 	<span
-		class="bg-primary block w-fit px-5 py-3 text-lg font-bold uppercase text-white no-underline hover:brightness-90"
+		class="bg-primary block w-fit px-5 py-3 text-lg font-bold uppercase text-white no-underline"
 	>
 		<slot />
 	</span>
 </svelte:element>
 
 <style>
+	.shadow-before:not(:disabled):hover {
+		filter: brightness(0.9);
+	}
+
 	.shadow-before::before {
 		content: "";
 		display: block;
@@ -38,7 +44,7 @@
 		background-color: black;
 		transition: all 0.1s ease-in-out;
 	}
-	.shadow-before:hover::before {
+	.shadow-before:not(:disabled):hover::before {
 		transform: translate(0, 0);
 		opacity: 0;
 	}
