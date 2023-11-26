@@ -62,14 +62,16 @@
 			/> -->
 		</div>
 	</LinkButton>
-	<div class="flex gap-4">
-		<LinkButton on:click={previous}>
-			<span class="block -translate-x-0.5 -rotate-90"> &#9650; </span>
-		</LinkButton>
-		<LinkButton on:click={next}>
-			<span class="block translate-x-0.5 rotate-90"> &#9650; </span>
-		</LinkButton>
-	</div>
+	{#if imagesWithProperSrc.length > 1}
+		<div class="flex gap-4">
+			<LinkButton on:click={previous}>
+				<span class="block -translate-x-0.5 -rotate-90"> &#9650; </span>
+			</LinkButton>
+			<LinkButton on:click={next}>
+				<span class="block translate-x-0.5 rotate-90"> &#9650; </span>
+			</LinkButton>
+		</div>
+	{/if}
 	<dialog open={modalOpen}>
 		<!-- Modal -->
 		<!-- ::backdrop -->
