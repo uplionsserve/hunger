@@ -6,8 +6,26 @@ import ProgramListing from "@components/ProgramListing.svelte"
 type Program = {
 	title: string
 	title_id: string
-	description: string
+	logo_image: {
+		sizes: {
+			logo: {
+				url: string
+			}
+		}
+		alt: string
+	}
 	description_html: string
+	cta_button: {
+		text: string
+		url: string
+	}
+	gallery_images: Array<{
+		image: {
+			url: string
+			alt: string
+		}
+		caption: string
+	}>
 }
 
 const { docs: programs } = (await getCMSData("programs")) as { docs: Program[] }
@@ -15,8 +33,12 @@ const { docs: programs } = (await getCMSData("programs")) as { docs: Program[] }
 
 <Layout title="Programs | Hunger">
 	<div class="grid lg:grid-cols-3">
-		<article class="flex flex-col gap-20 lg:col-span-2">
-			{programs.map((program) => <ProgramListing program={program} />)}
+		<article class="flex flex-col gap-20 lg:col-span-3">
+			{
+				programs.map((program) => (
+					<ProgramListing program={program} client:load />
+				))
+			}
 		</article>
 	</div>
 </Layout>
