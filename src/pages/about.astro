@@ -1,11 +1,11 @@
 ---
-import { getCMSData, getCMSPage } from "src/helpers"
 import Layout from "@layouts/Layout.astro"
 import Partner from "@components/Partner.svelte"
 import LinkButton from "@components/LinkButton.svelte"
+import { getAboutPage, getPartners } from "@/utils/cms"
 
-const aboutData = await getCMSPage("about")
-const { docs: partners } = await getCMSData("partners?sort=id")
+const aboutData = await getAboutPage()
+const partners = await getPartners()
 ---
 
 <Layout title="About | Hunger">

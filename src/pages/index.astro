@@ -1,16 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro"
-import { getCMSPage, getCMSData } from "../helpers"
+import { getPrograms, getHomePage } from "@/utils/cms"
 
-const homeData = await getCMSPage("home")
+const homeData = await getHomePage()
 
 const titleRegex = homeData.title.match(/_(.*)_/)
-let title = homeData.title.replace(
-	titleRegex[0],
-	`<span class="underline">${titleRegex[1]}</span>`,
-)
 
-const { docs: programs } = await getCMSData("programs")
+if (titleRegex) {
+	homeData.title = homeData.title.replace(
+		titleRegex[0],
+		`<span class="underline">${titleRegex![1]}</span>`,
+	)
+}
+
+const programs = await getPrograms()
 ---
 
 <Layout title="Hunger | U.P. Lions Serve">
@@ -18,7 +21,7 @@ const { docs: programs } = await getCMSData("programs")
 		<div class="md:max-w-1xl flex flex-col gap-4 md:mx-auto lg:col-span-8">
 			<h1
 				class="mb-2 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:leading-none lg:mb-6 lg:text-6xl"
-				set:html={title}
+				set:html={homeData.title}
 			/>
 
 			{

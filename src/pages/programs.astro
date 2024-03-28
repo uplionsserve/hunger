@@ -2,33 +2,9 @@
 import { getCMSData } from "src/helpers"
 import Layout from "@layouts/Layout.astro"
 import ProgramListing from "@components/ProgramListing.svelte"
+import { getPrograms } from "@/utils/cms"
 
-type Program = {
-	title: string
-	title_id: string
-	logo_image: {
-		sizes: {
-			logo: {
-				url: string
-			}
-		}
-		alt: string
-	}
-	description_html: string
-	cta_button: {
-		text: string
-		url: string
-	}
-	gallery_images: Array<{
-		image: {
-			url: string
-			alt: string
-		}
-		caption: string
-	}>
-}
-
-const { docs: programs } = (await getCMSData("programs")) as { docs: Program[] }
+const programs = await getPrograms()
 ---
 
 <Layout title="Programs | Hunger">

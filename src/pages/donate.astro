@@ -2,8 +2,9 @@
 import Layout from "@layouts/Layout.astro"
 import LinkButton from "@components/LinkButton.svelte"
 import { getCMSPage } from "src/helpers"
+import { getDonatePage } from "@/utils/cms"
 
-const donateData = await getCMSPage("donate")
+const donateData = await getDonatePage()
 ---
 
 <Layout title="Donate">
@@ -15,9 +16,13 @@ const donateData = await getCMSPage("donate")
 				Let's grow <span class="underline">together!</span>
 			</h1>
 			<Fragment set:html={donateData.donate_statement_html} />
-			<LinkButton href={donateData.donate_cta_button.url} classes="mt-4">
-				{donateData.donate_cta_button.text}
-			</LinkButton>
+			{
+				donateData.donate_cta_button && (
+					<LinkButton href={donateData.donate_cta_button!.url!} classes="mt-4">
+						{donateData.donate_cta_button!.text!}
+					</LinkButton>
+				)
+			}
 		</div>
 	</div>
 </Layout>

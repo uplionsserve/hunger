@@ -2,46 +2,11 @@
 	import { onMount } from "svelte"
 	import Carousel from "./Carousel/Carousel.svelte"
 	import LinkButton from "./LinkButton.svelte"
+	import type { HungerDataMedia, HungerDataProgram } from "@/payloadTypes"
 
-	type Image = {
-		src: string
-		alt: string
-		caption: string
-	}
+	export let program: HungerDataProgram
 
-	type Program = {
-		title: string
-		title_id: string
-		logo_image: {
-			sizes: {
-				logo: {
-					url: string
-				}
-			}
-			alt: string
-		}
-		description_html: string
-		cta_button: {
-			text: string
-			url: string
-		}
-		gallery_images: Array<{
-			image: {
-				url: string
-				alt: string
-			}
-			caption: string
-		}>
-	}
-
-	export let program: Program
-
-	let images: Image[] =
-		program.gallery_images.map((image) => ({
-			src: image.image.url,
-			alt: image.image.alt,
-			caption: image.caption,
-		})) || []
+	let images = program.gallery_images
 </script>
 
 <section
@@ -50,14 +15,9 @@
 >
 	<div class="col-span-2">
 		<header class="mb-4 mt-1 flex items-center gap-4">
-			{#if program.logo_image}
+			{#if program.logo_image && typeof program.logo_image != "number"}
 				<img
-					src={`${
-						import.meta.env.PROD
-							? program.logo_image.sizes?.logo.url
-							: `http://localhost:3000${program.logo_image.sizes?.logo.url}` ??
-							  ""
-					}`}
+					src={program.logo_image.sizes?.logo?.url}
 					alt=""
 					class="absolute h-24 w-24 opacity-20 lg:static lg:h-20 lg:w-20 lg:opacity-100"
 				/>
@@ -69,17 +29,15 @@
 			</h2>
 		</header>
 		{@html program.description_html}
-		{#if program.cta_button.url}
+		{#if program.cta_button?.url}
 			<LinkButton href={program.cta_button.url} classes="mt-4">
 				{program.cta_button.text}
 			</LinkButton>
 		{/if}
 	</div>
-	{#if images.length > 0}
-		<div>
-			<Carousel {images} />
-		</div>
-	{/if}
+	<div>
+		<Carousel images={program.gallery_images} />
+	</div>
 </section>
 
 <style>
@@ -102,7 +60,7 @@
 	}
 
 	.root :global(ul) {
-		@apply font-body list-inside list-disc text-base text-gray-600;
+		@apply list-inside list-disc font-body text-base text-gray-600;
 
 		@media (min-width: 640px) {
 			font-size: 1.25rem /* 20px */;
