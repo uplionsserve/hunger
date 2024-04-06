@@ -11,7 +11,7 @@
 
 <section
 	id={program.title_id}
-	class="root md:max-w-1xl grid min-h-[300px] gap-4 md:mx-auto lg:grid-cols-3"
+	class="root md:max-w-1xl grid min-h-[300px] gap-16 md:mx-auto lg:grid-cols-3"
 >
 	<div class="col-span-2">
 		<header class="mb-4 mt-1 flex items-center gap-4">
@@ -42,7 +42,7 @@
 
 <style>
 	.root :global(p) {
-		@apply font-body text-base text-gray-600;
+		@apply mb-4 font-body text-base text-gray-600;
 
 		@media (min-width: 640px) {
 			font-size: 1.25rem /* 20px */;
