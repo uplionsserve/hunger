@@ -1,5 +1,4 @@
 ---
-import { getCMSData } from "src/helpers"
 import Layout from "@layouts/Layout.astro"
 import ProgramListing from "@components/ProgramListing.svelte"
 import { getPrograms } from "@/utils/cms"
@@ -8,7 +7,7 @@ const programs = await getPrograms()
 ---
 
 <Layout title="Programs | Hunger">
-	<div class="grid lg:grid-cols-3">
+	<div class="col-span-3 grid lg:grid-cols-3">
 		<article class="flex flex-col gap-20 lg:col-span-3">
 			{
 				programs.map((program) => (

@@ -9,9 +9,9 @@ const partners = await getPartners()
 ---
 
 <Layout title="About | Hunger">
-	<div class="flex flex-col gap-12">
-		<div class="grid lg:grid-cols-3">
-			<div class="flex flex-col gap-4 lg:col-span-2">
+	<div class="col-span-2 flex flex-col gap-12">
+		<div class="grid">
+			<div class="flex flex-col gap-4">
 				<div class="md:max-w-1xl flex flex-col gap-4 md:mx-auto lg:col-span-8">
 					<h2
 						class="mb-2 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:leading-none lg:mb-6 lg:text-6xl"
@@ -31,7 +31,7 @@ const partners = await getPartners()
 				<br class="block w-full" />
 			</div>
 		</div>
-		<div class="grid w-full md:mx-auto lg:grid-cols-3">
+		<div class="grid w-full md:mx-auto">
 			<div class="col-span-2 flex flex-col gap-4">
 				<h2
 					class="mb-2 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:leading-none lg:mb-6 lg:text-6xl"
@@ -42,7 +42,7 @@ const partners = await getPartners()
 				<Fragment set:html={aboutData.vision_statement_html} />
 			</div>
 		</div>
-		<div class="grid w-full md:mx-auto lg:grid-cols-3">
+		<div class="grid w-full md:mx-auto">
 			<div class="col-span-2 flex flex-col gap-6">
 				<h2
 					class="mb-2 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:leading-none lg:mb-6 lg:text-6xl"
@@ -55,9 +55,37 @@ const partners = await getPartners()
 			</div>
 		</div>
 	</div>
+	<div
+		id="hero-image"
+		class="relative mt-12 h-60 w-full bg-cover bg-[center_right_-260px] object-contain sm:mx-auto lg:mx-0 lg:mt-0 lg:h-full lg:max-w-none lg:items-center"
+	>
+	</div>
 </Layout>
 
 <style>
+	#hero-image {
+		background-image: url("/hunger/about.jpg");
+		max-height: 700px;
+	}
+
+	#hero-image::before {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		z-index: -1;
+		background-color: #f37728;
+		transform: translate(-1%, 4%);
+	}
+
+	@media (min-width: 1024px) {
+		#hero-image::before {
+			bottom: 0;
+			transform: translate(-4%, 2%);
+		}
+	}
+
 	:global(p) {
 		@apply font-body text-base text-gray-600;
 

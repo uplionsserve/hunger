@@ -1,14 +1,13 @@
 ---
 import Layout from "@layouts/Layout.astro"
 import LinkButton from "@components/LinkButton.svelte"
-import { getCMSPage } from "src/helpers"
 import { getDonatePage } from "@/utils/cms"
 
 const donateData = await getDonatePage()
 ---
 
 <Layout title="Donate">
-	<div class="flex flex-col lg:grid lg:grid-cols-12 lg:gap-8">
+	<div class="col-span-3 flex flex-col lg:grid lg:grid-cols-12 lg:gap-8">
 		<div class="md:max-w-1xl flex flex-col gap-4 md:mx-auto lg:col-span-8">
 			<h1
 				class="mb-2 mt-1 text-4xl font-extrabold uppercase leading-10 tracking-tight text-gray-900 sm:leading-none lg:mb-6 lg:text-6xl"
